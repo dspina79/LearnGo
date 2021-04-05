@@ -25,5 +25,11 @@ func main() {
 		}
 	}
 
-	fmt.Println(twoDimArray)
+	for a := 0; a < 12; a++ {
+		for b := 0; b < 12; b++ {
+			fmt.Print(twoDimArray[a][b], "\t")
+		}
+		fmt.Print("\n")
+	}
+
 }
