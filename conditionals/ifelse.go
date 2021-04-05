@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 	name := "Dave"
@@ -19,4 +22,33 @@ func main() {
 	} else {
 		fmt.Println("So, you're", name, lastName)
 	}
+
+	// switch
+	var b int = 3
+
+	switch b {
+	case 1:
+		fmt.Println("The number one was selected.")
+	case 2:
+		fmt.Println("The number two was selected.")
+	case 3:
+		fmt.Println("The number three was selected.")
+	default:
+		fmt.Println("Some other number was selected.")
+	}
+
+	switch time.Now().Weekday() {
+	case time.Saturday, time.Sunday:
+		fmt.Println("It's the weekend.")
+	default:
+		fmt.Println("It's part of the work week.")
+	}
+
+	// delegated function
+	add := func(x int, y int) int {
+		return x + y
+	}
+
+	result := add(3, 5)
+	fmt.Println("The result is ", result)
 }
