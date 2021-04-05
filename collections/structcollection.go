@@ -7,6 +7,23 @@ type Person struct {
 	LastName  string
 }
 
+type Couple struct {
+	Person1 Person
+	Person2 Person
+}
+
+func (p Person) lastFirst() string {
+	return p.LastName + ", " + p.FirstName
+}
+
+func (p Person) couple(other Person) Couple {
+	return Couple{Person1: p, Person2: other}
+}
+
+func (c Couple) toString() string {
+	return c.Person1.lastFirst() + " and " + c.Person2.lastFirst()
+}
+
 func getFullName(person Person) string {
 	return person.FirstName + " " + person.LastName
 }
@@ -27,8 +44,13 @@ func main() {
 	}
 
 	for _, p2 := range persons {
-		s2 := getFullName(p2)
-		fmt.Println(s2)
+		fmt.Println(p2.lastFirst())
 	}
+
+	// coupling
+	p1 := Person{FirstName: "Danielle", LastName: "Hollman"}
+	p2 := Person{FirstName: "Greg", LastName: "Hollman"}
+	c := p1.couple(p2)
+	fmt.Println(c.toString())
 
 }
