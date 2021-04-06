@@ -32,4 +32,24 @@ func main() {
 		fmt.Print("\n")
 	}
 
+	// slices
+	slice1 := make([]string, 10)
+	slice1[0] = "Mark"
+	slice1[1] = "Rick"
+	slice1[2] = "Steve"
+	slice1[3] = "Lynn"
+	slice1[4] = "Sharon"
+	slice1[5] = "Esther"
+	slice1[6] = "Ryan"
+	slice1[7] = "Bea"
+	slice1[8] = "Milton"
+	slice1[9] = "Cheryl"
+
+	fmt.Println(slice1)
+
+	fmt.Println("Slice [2:5] = ", slice1[2:5])
+	fmt.Println("Slice [5:] = ", slice1[5:])
+	fmt.Println("Slice [9:] = ", slice1[9:])
+	fmt.Println("Slice [:4] = ", slice1[:4])
+
 }
