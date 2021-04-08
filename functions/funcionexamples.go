@@ -17,6 +17,15 @@ func divide(x, y int) float32 {
 	return fx / fy
 }
 
+func addGroup(nums ...int) int {
+	sum := 0
+	for _, num := range nums {
+		sum += num
+	}
+
+	return sum
+}
+
 func getMinMax(vals []int) (int, int) {
 	min := 0
 	max := 0
@@ -33,6 +42,13 @@ func getMinMax(vals []int) (int, int) {
 	return min, max
 }
 
+func averageGroup(nums ...int) float32 {
+	sum := addGroup(nums...)
+	var a float32 = float32(sum) / float32(len(nums))
+
+	return a
+}
+
 func main() {
 	var x int = 10
 	var y int = 15
@@ -45,7 +61,11 @@ func main() {
 	fmt.Println("Array is: ", values)
 	min, max := getMinMax(values)
 
-	fmt.Println("The min of hte array is: ", min)
-	fmt.Println("The max of hte array is: ", max)
+	fmt.Println("The min of the array is: ", min)
+	fmt.Println("The max of the array is: ", max)
 
+	sum := addGroup(2, 3, 4, 5, 6, 7, 10, 12, 13)
+	average := averageGroup(2, 3, 4, 5, 6, 7, 10, 12, 13)
+	fmt.Println("The sum of 2,3,4,5,6,7,10,12, and 13 is ", sum)
+	fmt.Println("The average of 2,3,4,5,6,7,10,12, and 13 is ", average)
 }
