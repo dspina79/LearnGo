@@ -49,6 +49,16 @@ func averageGroup(nums ...int) float32 {
 	return a
 }
 
+// recursion
+
+func fact(x int) int {
+	if x < 2 {
+		return 1
+	} else {
+		return x * fact(x-1)
+	}
+}
+
 func main() {
 	var x int = 10
 	var y int = 15
@@ -68,4 +78,10 @@ func main() {
 	average := averageGroup(2, 3, 4, 5, 6, 7, 10, 12, 13)
 	fmt.Println("The sum of 2,3,4,5,6,7,10,12, and 13 is ", sum)
 	fmt.Println("The average of 2,3,4,5,6,7,10,12, and 13 is ", average)
+
+	base := 6
+	fact6 := fact(base)
+
+	fmt.Println("The factorial of", base, "is", fact6)
+
 }
